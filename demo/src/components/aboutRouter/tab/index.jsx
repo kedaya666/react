@@ -1,15 +1,23 @@
 import React , { Component } from 'react'
 import {
-    Link
+    Link,
+    Route
 } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
+//react的传参必须加上这一步
 class Tab extends Component{
-    constructor(props){
-        super(props)
+    static contextTypes = {
+        router: PropTypes.object.isRequired
+    }
+    constructor(props,contextTypes){
+        super(props,contextTypes)
+        console.log(contextTypes)
         // 生命周期相关
         this.state = {
-            name:"Ys" 
+            name:"Ys" ,
         }
+
     }
     render(){
         return <div>
